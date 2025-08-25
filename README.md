@@ -340,6 +340,3 @@ Dự án này được cấp phép theo [MIT License](LICENSE) - xem file LICENS
 
 ---
 
-⭐ **Nếu dự án này hữu ích, hãy cho chúng tôi một star và contribute!** ⭐
-
-**Made with ❤️ by ParrotEdu Team**
