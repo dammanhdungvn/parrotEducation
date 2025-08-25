@@ -7,7 +7,7 @@ import ScoreCard from './ScoreCard';
  * Dashboard component with clean and professional design
  * Memoized for performance optimization
  */
-const Dashboard = memo(() => {
+const Dashboard = memo(({ onSectionChange = () => {} }) => {
   const stats = useSelector(selectScoreStats);
   const topThree = useSelector(selectTopThree);
 
@@ -191,18 +191,24 @@ const Dashboard = memo(() => {
             <div className="text-4xl mb-4">📝</div>
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Nhập Kết Quả Mới</h4>
             <p className="text-gray-600 mb-4">Thêm điểm số và thời gian hoàn thành</p>
-            <a href="#form" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+            <button 
+              onClick={() => onSectionChange('form')}
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 cursor-pointer"
+            >
               Bắt đầu ngay
-            </a>
+            </button>
           </div>
           
           <div className="text-center p-6 bg-green-50 rounded-xl hover:bg-green-100 transition-all duration-300">
             <div className="text-4xl mb-4">🏆</div>
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Xem Bảng Xếp Hạng</h4>
             <p className="text-gray-600 mb-4">Kiểm tra vị trí và so sánh kết quả</p>
-            <a href="#ranking" className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200">
+            <button 
+              onClick={() => onSectionChange('ranking')}
+              className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 cursor-pointer"
+            >
               Xem ngay
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ function App() {
   const renderSection = () => {
     switch (currentSection) {
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard onSectionChange={setCurrentSection} />;
       case 'form':
         return (
           <div className="space-y-8">
